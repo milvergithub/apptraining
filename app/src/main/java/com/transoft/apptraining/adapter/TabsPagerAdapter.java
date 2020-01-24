@@ -1,20 +1,16 @@
 package com.transoft.apptraining.adapter;
 
 import android.content.Context;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-
-import com.transoft.apptraining.R;
 import com.transoft.apptraining.ui.main.AboutFragment;
 import com.transoft.apptraining.ui.main.ContactFragment;
 import com.transoft.apptraining.ui.main.LoginFragment;
 
 public class TabsPagerAdapter extends FragmentPagerAdapter {
 
-  private static final int[] TAB_TITLES = new int[] { R.string.tab_text_1, R.string.tab_text_2, R.string.tab_text_3 };
   private final Context context;
 
   public TabsPagerAdapter(@NonNull Context context, FragmentManager fm) {
@@ -36,7 +32,6 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
         return null;
     }
   }
-
 
   @Override
   public int getCount() {
