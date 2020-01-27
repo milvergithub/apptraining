@@ -1,0 +1,229 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray"
+    tools:context=".ZebraPrinterActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+            android:paddingBottom="@dimen/scroll_view_bottom">
+            <RelativeLayout
+                android:id="@+id/zebraHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_default"
+                android:layout_marginRight="@dimen/margin_default"
+                android:layout_marginBottom="@dimen/margin_default"
+                android:background="@drawable/card_round_white"
+                android:elevation="@dimen/elevation_default"
+                android:padding="@dimen/margin_default">
+                <ImageView
+                    android:id="@+id/zebraLogo"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentBottom="false"
+                    android:layout_centerVertical="true"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_toRightOf="@+id/zebraLogo"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/zebra_technologies_corp"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/zebra_address_line_1"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/launchpad_link"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/zebra_address_line_2"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_default"
+                android:layout_marginRight="@dimen/margin_default"
+                android:layout_marginBottom="@dimen/margin_default"
+                android:background="@drawable/card_round_white"
+                android:elevation="@dimen/elevation_large"
+                android:orientation="vertical">
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/zebra_blue"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/ipDnsRadio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:checked="true"
+                        android:text="IP/DNS"
+                        android:textColor="@android:color/white"
+                        android:textSize="18dp" />
+                    <RadioButton
+                        android:id="@+id/bluetoothRadio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Bluetooth (R)"
+                        android:textColor="@android:color/white"
+                        android:textSize="18dp" />
+                </RadioGroup>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/ipAddressText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ip Address:"
+                        android:textSize="18.0sp" />
+                    <EditText
+                        android:id="@+id/ipAddressInput"
+                        android:layout_weight="1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/etext_round"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:inputType="textNoSuggestions|text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small">
+                    <TextView
+                        android:id="@+id/portText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Port:"
+                        android:textSize="18.0sp" />
+                    <EditText
+                        android:id="@+id/portInput"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:background="@drawable/etext_round"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        android:maxLength="5"
+                        android:text="9100" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:layout_marginBottom="@dimen/margin_small">
+
+                    <TextView
+                        android:id="@+id/macAddressText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="MAC Address:"
+                        android:textSize="18.0sp" />
+
+                    <EditText
+                        android:id="@+id/macInput"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/etext_round"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:inputType="textNoSuggestions|text" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/statusText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center_horizontal"
+                    android:text="Status: Not Connected"
+                    android:textSize="18.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_default"
+                android:layout_marginRight="@dimen/margin_default"
+                android:layout_marginBottom="@dimen/margin_default">
+                <Button
+                    android:id="@+id/testButton"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_round"
+                    android:text="Test"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+        <FrameLayout
+            android:id="@+id/selectedPrinterFragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true" />
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectedPrinterFragmentContainer"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true">
+            <ImageView
+                android:id="@+id/zebraFooterLogo"
+                android:layout_width="139dp"
+                android:layout_height="48dp"
+                android:layout_gravity="bottom"
+                android:layout_margin="@dimen/std_container_margin" />
+        </FrameLayout>
+    </RelativeLayout>
+</ScrollView>
+
+
+
+
+
+
+
+

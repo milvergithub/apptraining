@@ -59,6 +59,7 @@
                             android:layout_height="50dp"
                             android:paddingStart="15dp"
                             android:paddingEnd="15dp"
+                            android:inputType="textPassword"
                             android:hint="Ingrese su Contrasenia"
                             android:background="@drawable/etext_round"/>
                     </RelativeLayout>
@@ -76,6 +77,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/btn_round"
+                        android:textColor="@color/white"
                         android:layout_weight="1"
                         android:text="Iniciar Sesion" />
                 </LinearLayout>

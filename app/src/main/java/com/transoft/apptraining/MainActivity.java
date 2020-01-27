@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 import com.transoft.apptraining.adapter.TabsPagerAdapter;
+import com.transoft.zebraprinter.ZebraPrinterActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
         tabs.getTabAt(0).setIcon(R.drawable.ic_lock);
+        tabs.getTabAt(0).select();
         tabs.getTabAt(1).setIcon(R.drawable.ic_pass);
         tabs.getTabAt(2).setIcon(R.drawable.ic_business);
     }
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.policy:
                 Toast.makeText(this, "Politicas de Seguridad", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), ZebraPrinterActivity.class));
                 break;
             case R.id.out:
                 Toast.makeText(this, "Salir", Toast.LENGTH_SHORT).show();
