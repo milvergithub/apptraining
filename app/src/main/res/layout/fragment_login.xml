@@ -73,7 +73,7 @@
                     android:layout_marginTop="@dimen/section_margin_top"
                     android:layout_below="@id/password_section">
                     <Button
-                        android:id="@+id/btn_pu_cancel"
+                        android:id="@+id/btn_login"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/btn_round"
