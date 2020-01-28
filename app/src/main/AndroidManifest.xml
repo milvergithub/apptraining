@@ -11,7 +11,10 @@
         android:theme="@style/AppTheme">
         <activity
             android:theme="@style/AppTheme.NoActionBar"
-            android:name=".ui.home.HomeActivity"></activity>
+            android:name=".ui.sales.DestinationActivity"></activity>
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
