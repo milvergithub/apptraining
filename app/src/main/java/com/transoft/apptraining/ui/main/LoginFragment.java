@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.transoft.apptraining.R;
+import com.transoft.apptraining.ui.home.HomeActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
