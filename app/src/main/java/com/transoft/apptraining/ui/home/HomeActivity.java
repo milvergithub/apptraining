@@ -6,13 +6,18 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabLayout;
 import com.transoft.apptraining.R;
+import com.transoft.apptraining.adapter.HomeTabsPagerAdapter;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -24,10 +29,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
   }
 
   private void setupwidgets() {
+    setupNavigationView();
+    setupViewPager();
+  }
+
+  private void setupNavigationView() {
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
     DrawerLayout drawer = findViewById(R.id.drawer_layout);
-    ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+    ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
+        R.string.navigation_drawer_open, R.string.navigation_drawer_close);
     drawer.addDrawerListener(toggle);
     toggle.syncState();
 
@@ -38,7 +49,48 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     MenuItem nav_camara = menu.findItem(R.id.nav_setting);
     nav_camara.setVisible(false);
     navigationView.setNavigationItemSelectedListener(this);
+  }
 
+  private void setupViewPager() {
+    HomeTabsPagerAdapter tabsPagerAdapter = new HomeTabsPagerAdapter(this, getSupportFragmentManager());
+
+    ViewPager viewPager = findViewById(R.id.home_view_pager);
+    viewPager.setAdapter(tabsPagerAdapter);
+
+    TabLayout tabs = findViewById(R.id.hometabs);
+    tabs.setupWithViewPager(viewPager);
+    tabs.getTabAt(0).setIcon(R.drawable.ic_lock);
+    tabs.getTabAt(0).select();
+    tabs.getTabAt(1).setIcon(R.drawable.ic_pass);
+    tabs.getTabAt(2).setIcon(R.drawable.ic_business);
+    tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+      @Override
+      public void onTabSelected(TabLayout.Tab tab) {
+        cleanFramentNav();
+        setupParamsViewPager(ViewGroup.LayoutParams.MATCH_PARENT);
+      }
+
+      @Override
+      public void onTabUnselected(TabLayout.Tab tab) {
+      }
+
+      @Override
+      public void onTabReselected(TabLayout.Tab tab) {
+        cleanFramentNav();
+        setupParamsViewPager(ViewGroup.LayoutParams.MATCH_PARENT);
+      }
+    });
+  }
+
+  private void cleanFramentNav() {
+    FrameLayout frameLayout = findViewById(R.id.flMain);
+    frameLayout.removeAllViews();
+  }
+
+  private void setupParamsViewPager(int matchParent) {
+    ViewGroup.LayoutParams params = findViewById(R.id.home_view_pager).getLayoutParams();
+    params.height = matchParent;
+    findViewById(R.id.home_view_pager).setLayoutParams(params);
   }
 
   public void setActionBarTitle(String title) {
@@ -68,14 +120,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     return super.onOptionsItemSelected(item);
   }
 
-  @SuppressWarnings("StatementWithEmptyBody")
   @Override
+  @SuppressWarnings("StatementWithEmptyBody")
   public boolean onNavigationItemSelected(MenuItem item) {
     int id = item.getItemId();
-
+    setupParamsViewPager(0);
     if (id == R.id.nav_home) {
       FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-      ft.replace(R.id.flMain,new HomeFragment());
+      ft.replace(R.id.flMain, new HomeFragment());
       ft.commit();
     } else if (id == R.id.nav_inbox) {
       FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
