@@ -5,15 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
-
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.transoft.apptraining.R;
@@ -63,34 +58,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     tabs.getTabAt(0).select();
     tabs.getTabAt(1).setIcon(R.drawable.ic_pass);
     tabs.getTabAt(2).setIcon(R.drawable.ic_business);
-    tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-      @Override
-      public void onTabSelected(TabLayout.Tab tab) {
-        cleanFramentNav();
-        setupParamsViewPager(ViewGroup.LayoutParams.MATCH_PARENT);
-      }
-
-      @Override
-      public void onTabUnselected(TabLayout.Tab tab) {
-      }
-
-      @Override
-      public void onTabReselected(TabLayout.Tab tab) {
-        cleanFramentNav();
-        setupParamsViewPager(ViewGroup.LayoutParams.MATCH_PARENT);
-      }
-    });
-  }
-
-  private void cleanFramentNav() {
-    FrameLayout frameLayout = findViewById(R.id.flMain);
-    frameLayout.removeAllViews();
-  }
-
-  private void setupParamsViewPager(int matchParent) {
-    ViewGroup.LayoutParams params = findViewById(R.id.home_view_pager).getLayoutParams();
-    params.height = matchParent;
-    findViewById(R.id.home_view_pager).setLayoutParams(params);
   }
 
   public void setActionBarTitle(String title) {
@@ -124,15 +91,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
   @SuppressWarnings("StatementWithEmptyBody")
   public boolean onNavigationItemSelected(MenuItem item) {
     int id = item.getItemId();
-    setupParamsViewPager(0);
     if (id == R.id.nav_home) {
-      FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-      ft.replace(R.id.flMain, new HomeFragment());
-      ft.commit();
+
     } else if (id == R.id.nav_inbox) {
-      FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-      ft.replace(R.id.flMain, new HomeFragment());
-      ft.commit();
+
     } else if (id == R.id.nav_setting) {
 
     }

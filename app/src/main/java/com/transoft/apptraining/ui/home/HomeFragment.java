@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
-import com.transoft.apptraining.MainActivity;
 import com.transoft.apptraining.R;
 import com.transoft.apptraining.ui.sales.DestinationActivity;
 
