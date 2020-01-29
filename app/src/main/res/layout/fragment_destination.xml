@@ -1,14 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.sales.DestinationFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
-</FrameLayout>
+        android:layout_marginTop="@dimen/s70dp">
+        <Button
+            android:id="@+id/btnlapaz"
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/btn_round"
+            android:text="LA PAZ"
+            android:textColor="@android:color/white" />
+        <Button
+            android:id="@+id/btnoruro"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/btnlapaz"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/btn_round"
+            android:text="ORURO"
+            android:textColor="@android:color/white" />
+        <Button
+            android:id="@+id/btnsantacruz"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/btnoruro"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/btn_round"
+            android:text="SANTA CRUZ"
+            android:textColor="@android:color/white" />
+        <Button
+            android:id="@+id/btnsucre"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/btnsantacruz"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/btn_round"
+            android:text="SUCRE"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,9 @@
     <dimen name="s20dp">20dp</dimen>
     <dimen name="s30dp">30dp</dimen>
     <dimen name="s40dp">40dp</dimen>
+    <dimen name="s50dp">50dp</dimen>
+    <dimen name="s60dp">60dp</dimen>
+    <dimen name="s70dp">70dp</dimen>
     <dimen name="list_item_spacing">16dp</dimen>
     <dimen name="list_item_spacing_half">8dp</dimen>
 
