@@ -10,12 +10,21 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:elevation="0dp"
+        app:elevation="0dp"
+        android:background="@android:color/transparent"
         android:theme="@style/AppTheme.AppBarOverlay">
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
+            android:layout_marginTop="@dimen/s20dp"
+            android:layout_marginLeft="@dimen/s20dp"
+            android:layout_marginRight="@dimen/s20dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary" />
+            android:layout_height="66dp"
+            app:tabIndicatorHeight="0dp"
+            android:background="@drawable/tab_layout_background"
+            app:tabBackground="@drawable/tab_layout_selector"
+            app:tabSelectedTextColor="@color/colorPrimaryDark"/>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager
